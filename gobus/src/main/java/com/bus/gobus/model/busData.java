@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
 @Document(collection = "busData")
 public class busData {
 
+    @Id
     private long busid;
     private long busno;
     private String busname;
@@ -23,7 +25,8 @@ public class busData {
     private String arrival;
     private String departuretime;
     private String arrivaltime;
-    private long availableseats;
+//    private long availableseats;
+    private List<Integer> reservedseats;
     private long fare;
 //    private List<customer> personData;
 }

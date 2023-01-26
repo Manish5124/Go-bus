@@ -7,9 +7,9 @@ import com.bus.gobus.service.busService;
 import com.bus.gobus.service.customerservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class busController {
@@ -39,5 +39,10 @@ public class busController {
         return busservice.bookingticket(data);
     }
 
+    @GetMapping(value = "/reservedseats/{busno}")
+    public List<Integer> getAllReservedSeats(@PathVariable long busno)
+    {
+        return  busservice.ReservedSeats(busno);
+    }
 
 }

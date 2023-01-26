@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -14,7 +16,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class busbooking {
 
     private long busbookingid;
-    private long ticket;
+    private List<Integer> ticket;
     private long busno;
     private String customername;
 
